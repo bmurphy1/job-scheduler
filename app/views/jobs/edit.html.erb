@@ -1,0 +1,5 @@
+<%= form_for @job, url: {action: "update"} do |f| %>
+  <%= f.text_field(:name, placeholder: @job.name)  %>
+  <%= f.text_field(:command, placeholder: @job.command) %>
+  <%= f.submit "Save" %>
+  <% end %>
