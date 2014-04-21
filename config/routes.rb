@@ -5,6 +5,17 @@ TaskServer::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+
+  get '/login' => 'sessions#login'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#logout'
+
+  resources :sessions, only: [:new, :create]
+  resources :jobs
+  resources :schedules
+  resources :job_logs
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,1 +1,7 @@
 <h1>Background Tasker</h1>
+<% if current_user %>
+  <h3> Hello, <%= current_user.email %></h3>
+  <a href="/logout">Logout</a>
+  <% else %>
+<a href="/login">Login</a>
+<% end %>

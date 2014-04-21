@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421011857) do
+ActiveRecord::Schema.define(version: 20140421013132) do
 
   create_table "job_logs", force: true do |t|
     t.integer  "job_id"
@@ -34,9 +34,14 @@ ActiveRecord::Schema.define(version: 20140421011857) do
     t.datetime "updated_at"
   end
 
+  create_table "sessions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
