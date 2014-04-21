@@ -42,6 +42,7 @@ end
 
 gem 'sidekiq'
 gem 'redis'
+# gem 'sidetiq'
 
 # Use unicorn as the app server
 # gem 'unicorn'

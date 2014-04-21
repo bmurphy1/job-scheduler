@@ -16,4 +16,11 @@ class JobsController < ApplicationController
     @job.update(name: params[:job][:name], command: params[:job][:command])
     redirect_to job_path(@job)
   end
+
+  def execute
+    @job = Job.find(params[:id])
+    if current_user
+      @job.execute
+    end
+  end
 end

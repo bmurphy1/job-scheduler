@@ -12,6 +12,7 @@ TaskServer::Application.routes.draw do
 
   resources :sessions, only: [:new, :create]
   resources :jobs
+  get 'jobs/:id/execute' =>  'jobs#execute'
   resources :schedules
   resources :job_logs
 
