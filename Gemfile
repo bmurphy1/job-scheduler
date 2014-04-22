@@ -42,9 +42,9 @@ group :development, :test do
 end
 
 # For scheduling async workers
-gem 'sidekiq'
+gem 'sidekiq', '= 2.17.7'
 gem 'redis'
-# gem 'sidetiq'
+gem 'sidetiq'
 gem 'sinatra', '>= 1.3.0', :require => nil
 
 # Use unicorn as the app server
