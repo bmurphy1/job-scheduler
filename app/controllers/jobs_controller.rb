@@ -1,3 +1,4 @@
+require 'debugger'
 class JobsController < ApplicationController
   def index
     @jobs = Job.all
@@ -20,7 +21,9 @@ class JobsController < ApplicationController
   def execute
     @job = Job.find(params[:id])
     if current_user
-      @job.execute
+      result = @job.execute
+      JobLog.create(job_id: @job.id, success: result)
+      redirect_to jobs_path
     end
   end
 end

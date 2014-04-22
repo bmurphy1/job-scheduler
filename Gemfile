@@ -38,8 +38,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # For testing
 group :development, :test do
   gem 'rspec-rails'
+  gem 'debugger'
 end
 
+# For scheduling async workers
 gem 'sidekiq'
 gem 'redis'
 # gem 'sidetiq'

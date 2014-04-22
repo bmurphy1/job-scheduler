@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140421013132) do
     t.integer  "job_id"
     t.integer  "user_id"
     t.integer  "schedule_id"
+    t.boolean  "success"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

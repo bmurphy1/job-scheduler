@@ -4,6 +4,7 @@ class CreateJobLogs < ActiveRecord::Migration
       t.belongs_to :job
       t.belongs_to :user
       t.belongs_to :schedule
+      t.boolean :success
       t.timestamps
     end
   end

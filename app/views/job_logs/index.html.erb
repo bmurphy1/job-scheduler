@@ -1,0 +1,20 @@
+<h1>Job History</h1>
+
+<% if @job_logs.empty? %>
+Empty job history
+<% else %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Datetime ran</th>
+      <th>Ran Successfully?</th>
+    </tr>
+  <% @job_logs.each do |log| %>
+    <tr>
+      <td><%= log.job.name %></td>
+      <td><%= log.created_at %></td>
+      <td><%= log.success %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
