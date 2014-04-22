@@ -21,8 +21,8 @@ class JobsController < ApplicationController
   def execute
     @job = Job.find(params[:id])
     if current_user
-      result = @job.execute
-      JobLog.create(job_id: @job.id, success: result)
+      JobLog.create(job_id: @job.id)
+      JobWorker.perform_async(@job.command)
       redirect_to jobs_path
     end
   end

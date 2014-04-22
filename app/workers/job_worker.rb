@@ -1,7 +1,7 @@
 class JobWorker
   include Sidekiq::Worker
 
-  def perform(name, count)
-    puts "doing hard work"
+  def perform(job_command)
+    system(job_command)
   end
 end
