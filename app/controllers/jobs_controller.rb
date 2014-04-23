@@ -22,7 +22,15 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     if current_user
       JobLog.create(job_id: @job.id)
-      JobWorker.perform_async(@job.command, 1)
+      # JobWorker.perform_async(@job.command, 1)
+      # ResqueWorker.perform(@job.command)
+      config = {}
+      config[:class] = 'JobWorker'
+      config[:args] = @job.command
+      config[:cron] = '* * * * *'
+      config[:queue] = 'high'
+      config[:persist] = true
+      Resque.set_schedule(@job.name, config)
       redirect_to jobs_path
     end
   end
