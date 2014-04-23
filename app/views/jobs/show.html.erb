@@ -1,6 +1,11 @@
 <h1>Job Info</h1>
   <p>Name: <%= @job.name %></p>
   <p>Command to be run: <%= @job.command %></p>
-  <p><% if @job.schedule.nil?
+  <p>Schedule:
+    <% if @job.schedule.nil? %>
+    <%= "Not scheduled" %>
+    <% else %>
+    <%= "#{@job.schedule.name}, #{@job.schedule.cron_string}" %>
+    <% end %></p>
   <%= link_to "Edit", edit_job_path(@job) %>
 
