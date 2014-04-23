@@ -22,7 +22,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     if current_user
       JobLog.create(job_id: @job.id)
-      JobWorker.perform_async(@job.command)
+      JobWorker.perform_async(@job.command, 1)
       redirect_to jobs_path
     end
   end
