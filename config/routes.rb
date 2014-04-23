@@ -16,8 +16,9 @@ TaskServer::Application.routes.draw do
   resources :schedules
   resources :job_logs
 
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  # Used for Sidekiq web interface
+  #   require 'sidekiq/web'
+  #   mount Sidekiq::Web => '/sidekiq'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
