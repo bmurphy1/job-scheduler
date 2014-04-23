@@ -14,11 +14,12 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
+    @schedule = Schedule.find(params[:job][:schedule])
     p "THESE ARE THE PARAMS"
     p params
     @job.update(name: params[:job][:name],
                 command: params[:job][:command],
-                schedule: params[:job][:schedule])
+                schedule: @schedule)
     redirect_to job_path(@job)
   end
 
