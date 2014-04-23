@@ -1,7 +1,7 @@
 class JobWorker
-  include Sidekiq::Worker
+  # include Sidekiq::Worker
 
-  def perform(job_command, count)
+  def self.perform(job_command)
     system(job_command)
   end
 end

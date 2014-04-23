@@ -28,7 +28,7 @@ class JobsController < ApplicationController
     if current_user
       JobLog.create(job_id: @job.id)
       config = {}
-      config[:class] = 'JobWorker'
+      config[:class] = 'ResqueWorker'
       config[:args] = @job.command
       config[:cron] = @job.schedule.cron_string
       config[:queue] = 'high'

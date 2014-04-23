@@ -1,5 +1,5 @@
 class ResqueWorker < ActiveRecord::Base
-  @queue = :scheduled_queue
+  @queue = :high
 
   def self.perform(job_command)
     system(job_command)
