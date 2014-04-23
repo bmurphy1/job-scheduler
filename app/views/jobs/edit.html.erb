@@ -1,5 +1,6 @@
 <%= form_for @job, url: {action: "update"} do |f| %>
-  <%= f.text_field(:name, placeholder: @job.name)  %>
-  <%= f.text_field(:command, placeholder: @job.command) %>
+  <p><%= f.text_field(:name, placeholder: @job.name)  %></p>
+  <p><%= f.text_field(:command, placeholder: @job.command) %></p>
+  <p><%= f.collection_select(:schedule, Schedule.all, :to_s, :to_s, include_blank: true) %>
   <%= f.submit "Save" %>
   <% end %>
