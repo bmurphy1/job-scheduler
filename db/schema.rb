@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140423023500) do
   create_table "jobs", force: true do |t|
     t.string   "name"
     t.string   "command"
+    t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

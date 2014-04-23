@@ -3,6 +3,7 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string :name
       t.string :command
+      t.belongs_to :schedule
       t.timestamps
     end
   end
