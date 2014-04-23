@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140423023500) do
 
   create_table "schedules", force: true do |t|
     t.string   "name"
+    t.string   "cron_string"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
