@@ -1,0 +1,14 @@
+<h1>Schedules</h1>
+
+<% if current_user %>
+<!-- JobWorker.perform_async("bob", 5") -->
+
+<ul>
+  <% @schedules.each do |schedule| %>
+  <li> <%= link_to schedule.name, schedule %></li>
+  <% end %>
+</ul>
+
+<% else %>
+<h1>not logged in</h1>
+<% end %>
