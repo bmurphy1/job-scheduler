@@ -1,0 +1,5 @@
+<h1>Schedule Info</h1>
+
+<p>Name: <%= @schedule.name %></p>
+<p>Cron String: <%= @schedule.cron_string %></p>
+<p><%= link_to "Edit", edit_schedule_path(@schedule) %></p>
