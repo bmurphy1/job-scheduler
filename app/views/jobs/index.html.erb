@@ -8,7 +8,7 @@
   <li> <%= link_to job.name, job %></li>
   <% end %>
 </ul>
-<p><%= button_to "Create New Job", new_job_path %>
+<p><%= link_to "Create New Job", new_job_path %>
 
 <% else %>
 <h1>not logged in</h1>
