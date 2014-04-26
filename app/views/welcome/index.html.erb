@@ -2,9 +2,6 @@
 <% if current_user %>
   <h3> Hello, <%= current_user.email %></h3>
   <a href="/logout">Logout</a>
-  <% else %>
-<a href="/login">Login</a>
-<% end %>
 
 <div class="scheduled_jobs">
   <table>
@@ -27,3 +24,8 @@
 <p>
   <%= link_to 'Job History', job_logs_path %>
 </p>
+
+  <% else %>
+<a href="/login">Login</a>
+<% end %>
+
