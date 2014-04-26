@@ -1,0 +1,7 @@
+<h1>Create New Job</h1>
+
+<%= form_for @job, url: {action: "create"} do |f| %>
+  <p><%= f.text_field(:name, placeholder: "Name")  %></p>
+  <p><%= f.text_field(:command, placeholder: "Shell Command") %></p>
+  <%= f.submit "Create Job" %>
+  <% end %>
