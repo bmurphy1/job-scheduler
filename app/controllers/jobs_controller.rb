@@ -32,6 +32,12 @@ class JobsController < ApplicationController
     redirect_to job_path(@job)
   end
 
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
+  end
+
   def execute
     @job = Job.find(params[:id])
     if current_user
