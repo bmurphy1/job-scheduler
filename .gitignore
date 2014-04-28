@@ -15,5 +15,6 @@
 /log/*.log
 /tmp
 
-# Ignore all test files (named 'brian*.txt')
+# Ignore all test files
 /brian*.txt
+/test*.txt
