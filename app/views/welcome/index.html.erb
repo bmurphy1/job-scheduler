@@ -13,7 +13,8 @@
         <th>Schedule</th>
       </tr>
       <% @scheduled_jobs.each do |job| %>
-      <tr><td><%= link_to job.name, jobs_path(job) %>
+      <tr>
+        <td><%= link_to job.name, job_path(job) %>
         <td><%= link_to job.schedule.name, schedule_path(job.schedule) %></td>
       </tr>
       <% end %>
