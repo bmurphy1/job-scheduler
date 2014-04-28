@@ -7,6 +7,6 @@
     <% else %>
     <%= "#{@job.schedule.name}, #{@job.schedule.cron_string}" %>
     <% end %></p>
-  <%= button_to "Edit", edit_job_path(@job) %>
+  <%= link_to "Edit", edit_job_path(@job) %>
   <%= button_to "Delete Job", job_path(@job), method: "delete", data: {confirm: "Really delete job?", disable_with: "Deleting..."} %>
 

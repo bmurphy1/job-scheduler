@@ -1,3 +1,4 @@
+require 'debugger'
 class Job < ActiveRecord::Base
   has_many :job_logs
   belongs_to :schedule
@@ -5,15 +6,18 @@ class Job < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :name, :command, presence: true
 
+  before_destroy { Resque.remove_schedule(self.name) }
+
   after_save do
     if self.schedule
-      execute
+      self.execute
     end
   end
 
   def execute
-    Resque.remove_schedule(self.name)
-    JobLog.create(job_id: self.id)
+    p "EXECUTE IS GETTING RUN"
+    # Resque.remove_schedule(self.name)
+    # JobLog.create(job_id: self.id)
     config = {}
     config[:class] = 'ResqueWorker'
     config[:args] = self.command
