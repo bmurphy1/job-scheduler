@@ -15,15 +15,20 @@ class Job < ActiveRecord::Base
   end
 
   def execute
-    p "EXECUTE IS GETTING RUN"
-    # Resque.remove_schedule(self.name)
-    # JobLog.create(job_id: self.id)
-    config = {}
-    config[:class] = 'ResqueWorker'
-    config[:args] = self.command
-    config[:cron] = self.schedule.cron_string
-    config[:queue] = 'high'
-    config[:persist] = true
+    job_options_hash = {
+      :name => self.name,
+      :command => self.command,
+      :schedule => self.schedule.name
+    }
+
+    config = {
+      :class => 'ResqueWorker',
+      :args => job_options_hash,
+      :cron => self.schedule.cron_string,
+      :queue => 'high',
+      :persist => true
+    }
+
     Resque.set_schedule(self.name, config)
   end
 end

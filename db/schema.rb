@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20140423023500) do
 
   create_table "job_logs", force: true do |t|
-    t.integer  "job_id"
-    t.integer  "user_id"
-    t.integer  "schedule_id"
+    t.string   "name"
+    t.string   "command"
+    t.string   "schedule"
     t.boolean  "success"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,11 +38,6 @@ ActiveRecord::Schema.define(version: 20140423023500) do
   create_table "schedules", force: true do |t|
     t.string   "name"
     t.string   "cron_string"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sessions", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
