@@ -1,18 +1,12 @@
 require 'debugger'
 class Job < ActiveRecord::Base
-  has_many :job_logs
   belongs_to :schedule
 
   validates :name, uniqueness: true
   validates :name, :command, presence: true
 
+  after_save {self.execute if self.schedule }
   before_destroy { Resque.remove_schedule(self.name) }
-
-  after_save do
-    if self.schedule
-      self.execute
-    end
-  end
 
   def execute
     job_options_hash = {
