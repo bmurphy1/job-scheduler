@@ -38,19 +38,18 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
-  def execute
-    @job = Job.find(params[:id])
-    if current_user
-      JobLog.create(job_id: @job.id)
-      config = {}
-      config[:class] = 'ResqueWorker'
-      config[:args] = @job.command
-      config[:cron] = @job.schedule.cron_string
-      config[:queue] = 'high'
-      config[:persist] = true
-      p config
-      Resque.set_schedule(@job.name, config)
-      redirect_to jobs_path
-    end
-  end
+  # def execute
+  #   @job = Job.find(params[:id])
+  #   if current_user
+  #     config = {}
+  #     config[:class] = 'ResqueWorker'
+  #     config[:args] = @job.command
+  #     config[:cron] = @job.schedule.cron_string
+  #     config[:queue] = 'high'
+  #     config[:persist] = true
+  #     p config
+  #     Resque.set_schedule(@job.name, config)
+  #     redirect_to jobs_path
+  #   end
+  # end
 end
