@@ -1,6 +1,6 @@
 <%= form_for @job, url: {action: "update"} do |f| %>
   <p><%= f.text_field(:name, placeholder: @job.name)  %></p>
   <p><%= f.text_field(:command, placeholder: @job.command) %></p>
-  <p><%= f.collection_select(:schedule, Schedule.all, :id, :name, include_blank: true, prompt: "Select Schedule (blank to remove):") %>
+  <p><%= collection_select(:job, :schedule_id, Schedule.all, :id, :name, {include_blank: true, prompt: "Select Schedule (blank to remove):"} ) %>
   <%= f.submit "Save" %>
   <% end %>
