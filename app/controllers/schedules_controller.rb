@@ -11,6 +11,19 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
-  def update
+  def new
+    @schedule = Schedule.new
   end
+
+  def create
+    @schedule = Schedule.create(name: params[:schedule][:name], cron_string: params[:schedule][:cron_string])
+    redirect_to schedule_path(@schedule)
+  end
+
+  def update
+    @schedule = Schedule.find(params[:id])
+    @schedule.update(name: params[:schedule][:name], cron_string: params[:schedule][:cron_string])
+    redirect_to schedule_path(@schedule)
+  end
+
 end

@@ -1,0 +1,8 @@
+<h1>Create new schedule</h1>
+
+<%= form_for @schedule, url: {action: "create"} do |f| %>
+  <p><%= f.text_field(:name, placeholder: "Name")  %></p>
+  <p><%= f.text_field(:cron_string, placeholder: "cron string") %></p>
+
+  <%= f.submit "Create Schedule" %>
+  <% end %>
