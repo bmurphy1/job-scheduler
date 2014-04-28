@@ -11,7 +11,7 @@ Empty job history
     </tr>
   <% @job_logs.each do |log| %>
     <tr>
-      <td><%= log.job.name %></td>
+      <td><%= log.name %></td>
       <td><%= log.created_at %></td>
       <td><%= log.success %></td>
     </tr>
