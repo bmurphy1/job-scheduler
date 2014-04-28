@@ -2,4 +2,7 @@
 
 <p>Name: <%= @schedule.name %></p>
 <p>Cron String: <%= @schedule.cron_string %></p>
-<p><%= link_to "Edit", edit_schedule_path(@schedule) %></p>
+<p><%= link_to "Back", schedules_path %>
+  <%= link_to "Edit", edit_schedule_path(@schedule) %>
+
+</p>
