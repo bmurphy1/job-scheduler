@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :name, :command, presence: true
 
-  after_save {self.execute if self.schedule }
+  after_save { self.schedule ? self.execute : Resque.remove_schedule(self.name) }
   before_destroy { Resque.remove_schedule(self.name) }
 
   def execute

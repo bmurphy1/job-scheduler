@@ -22,7 +22,6 @@ class JobsController < ApplicationController
   end
 
   def update
-    p params
     @job = Job.find(params[:id])
     if params[:job]["schedule_id"] == ""
       @schedule = nil
