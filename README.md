@@ -26,13 +26,17 @@ rake db:create, db:migrate, db:seed
 ```
 
 ##To Start
-Run each command in a separate shell:
+Make sure you're running Redis before starting the Resque worker or scheduler. Here's a good order to run the following commands.Run each command in a separate shell:
 ```
 $ redis-server
 ```
-````
+```
 $ rails server
+```
+```
 $ QUEUE=* rake resque:work
+```
+```
 $ DYNAMIC=true rake resque:scheduler
 ```
 
