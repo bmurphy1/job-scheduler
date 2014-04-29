@@ -4,5 +4,5 @@
 <p>Cron String: <%= @schedule.cron_string %></p>
 <p><%= link_to "Back", schedules_path %>
   <%= link_to "Edit", edit_schedule_path(@schedule) %>
-
+  <%= button_to "Delete Schedule", schedule_path(@schedule), method: "delete", data: {confirm: "Really delete schedule?", disable_with: "Deleting..."} %>
 </p>
