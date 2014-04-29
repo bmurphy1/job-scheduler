@@ -1,20 +1,22 @@
-<h1>Background Tasker</h1>
+<h1>Job Scheduler</h1>
 <% if current_user %>
+<div class="nav">
   <h3> Hello, <%= current_user.email %></h3>
   <a href="/logout">Logout</a>
+</div>
 
-  <div class="scheduled_jobs">
-    <% if @scheduled_jobs.nil? %>
-    No scheduled jobs
-    <% else %>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Schedule</th>
-      </tr>
-      <% @scheduled_jobs.each do |job| %>
-      <tr>
-        <td><%= link_to job.name, job_path(job) %>
+<div class="scheduled_jobs">
+  <% if @scheduled_jobs.nil? %>
+  No scheduled jobs
+  <% else %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Schedule</th>
+    </tr>
+    <% @scheduled_jobs.each do |job| %>
+    <tr>
+      <td><%= link_to job.name, job_path(job) %>
         <td><%= link_to job.schedule.name, schedule_path(job.schedule) %></td>
       </tr>
       <% end %>
@@ -22,16 +24,16 @@
     <% end %>
   </div>
 
-<p>
-  <%= link_to 'Jobs', jobs_path %>
-</p>
-<p><%= link_to 'Schedules', schedules_path %></p>
+  <p>
+    <%= link_to 'Jobs', jobs_path %>
+  </p>
+  <p><%= link_to 'Schedules', schedules_path %></p>
 
-<p>
-  <%= link_to 'Job Log', job_logs_path %>
-</p>
+  <p>
+    <%= link_to 'Job Log', job_logs_path %>
+  </p>
 
   <% else %>
-<a href="/login">Login</a>
-<% end %>
+  <a href="/login">Login</a>
+  <% end %>
 
