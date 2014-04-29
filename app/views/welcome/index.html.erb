@@ -4,6 +4,17 @@
   p  @scheduled_jobs
   No scheduled jobs
   <% else %>
+
+  <p>
+    <%= link_to 'Jobs', jobs_path %>
+  </p>
+  <p><%= link_to 'Schedules', schedules_path %></p>
+
+  <p>
+    <%= link_to 'Job Log', job_logs_path %>
+  </p>
+
+
   <h3> Scheduled Jobs</h3>
   <table>
     <tr>
@@ -20,14 +31,7 @@
     <% end %>
   </div>
 
-  <p>
-    <%= link_to 'Jobs', jobs_path %>
-  </p>
-  <p><%= link_to 'Schedules', schedules_path %></p>
 
-  <p>
-    <%= link_to 'Job Log', job_logs_path %>
-  </p>
 
   <% else %>
   Not logged in

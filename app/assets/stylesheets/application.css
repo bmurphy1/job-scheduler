@@ -51,4 +51,8 @@ ul {
   padding-right: 160px;
 }
 
+/*----- Tables --------*/
 
+tr td {
+  padding: 5px 5px 5px 5px;
+}
