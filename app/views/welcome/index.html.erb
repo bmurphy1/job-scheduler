@@ -1,8 +1,10 @@
-
+<% if current_user %>
 <div class="scheduled_jobs">
   <% if @scheduled_jobs.nil? %>
+  p  @scheduled_jobs
   No scheduled jobs
   <% else %>
+  <h3> Scheduled Jobs</h3>
   <table>
     <tr>
       <th>Name</th>
@@ -26,3 +28,7 @@
   <p>
     <%= link_to 'Job Log', job_logs_path %>
   </p>
+
+  <% else %>
+  Not logged in
+  <% end %>

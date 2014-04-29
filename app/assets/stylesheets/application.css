@@ -12,18 +12,43 @@
  *= require_tree .
  */
 
-.nav {
-  background-color: lightgray;
-}
-
-#nav_left ul {
-  float: left;
-}
-
-#nav_right ul {
-  float: right;
+.container {
+  padding-top: 60px;
 }
 
 ul {
   list-style: none;
 }
+
+
+/* --- NAV ---- */
+
+.nav {
+  /*float: right;*/
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  font-weight: bold;
+}
+
+/*#nav-left ul {
+  float: left;
+}
+
+#nav-right ul {
+  float: right;
+}*/
+
+.nav ul li {
+  padding: 5px;
+  float: left;
+  list-style: none;
+}
+
+.nav #title {
+  padding-right: 160px;
+}
+
+

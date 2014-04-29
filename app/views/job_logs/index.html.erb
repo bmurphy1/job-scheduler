@@ -1,4 +1,5 @@
 <h1>Job History</h1>
+<% if current_user %>
 
 <% if @job_logs.empty? %>
 Empty job history
@@ -17,4 +18,8 @@ Empty job history
     </tr>
     <% end %>
   </table>
+<% end %>
+
+<% else %>
+Not logged in
 <% end %>
