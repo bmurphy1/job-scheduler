@@ -1,0 +1,6 @@
+<div class="nav">
+<% if current_user %>
+  <div id="nav-title">Job Scheduler</div>
+  <div id=""> Hello, <%= current_user.email %></div>
+  <a href="/logout">Logout</a>
+</div>

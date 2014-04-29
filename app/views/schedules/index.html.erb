@@ -8,7 +8,8 @@
   <li> <%= link_to schedule.name, schedule %></li>
   <% end %>
 </ul>
-<p><%= link_to "Back", root_path %>
+<p><%= link_to "Create New Schedule", new_schedule_path %></p>
+<p><%= link_to "Back", root_path %></p>
 
 <% else %>
 <h1>not logged in</h1>

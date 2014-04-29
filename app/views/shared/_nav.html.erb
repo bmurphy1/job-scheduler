@@ -1,0 +1,13 @@
+<div class="nav">
+  <div id="nav-left">Job Scheduler</div>
+  <div id="nav-right">
+    <ul>
+      <% if current_user %>
+      <li>Current user: <%= current_user.email %></li>
+      <li><a href="/logout">Logout</a></li>
+      <% else %>
+      <li><a href="/login">Logout</a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

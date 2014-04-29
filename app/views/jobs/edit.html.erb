@@ -1,6 +1,7 @@
 <%= form_for @job, url: {action: "update"} do |f| %>
   <p><%= f.text_field(:name, placeholder: @job.name)  %></p>
   <p><%= f.text_field(:command, placeholder: @job.command) %></p>
-  <p><%= collection_select(:job, :schedule_id, Schedule.all, :id, :name, {include_blank: "None"} ) %>
+  <p>Schedule: <%= collection_select(:job, :schedule_id, Schedule.all, :id, :name, {include_blank: "None"} ) %></p>
+  <%= link_to "Back", job_path(@job) %>
   <%= f.submit "Save" %>
   <% end %>

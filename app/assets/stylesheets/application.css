@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+
+.nav {
+  background-color: lightgray;
+}
+
+#nav_left ul {
+  float: left;
+}
+
+#nav_right ul {
+  float: right;
+}
+
+ul {
+  list-style: none;
+}

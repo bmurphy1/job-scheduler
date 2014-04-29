@@ -3,6 +3,6 @@
 <%= form_for @schedule, url: {action: "update"} do |f| %>
   <p><%= f.text_field(:name, placeholder: @schedule.name)  %></p>
   <p><%= f.text_field(:cron_string, placeholder: @schedule.cron_string) %></p>
-
+  <%= link_to "Back", schedule_path(@schedule) %>
   <%= f.submit "Save Schedule" %>
   <% end %>
