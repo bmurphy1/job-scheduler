@@ -20,4 +20,4 @@
 /test*.txt
 
 # Ignore dumb.rdb
-dump.rdb
+/dump.rdb
