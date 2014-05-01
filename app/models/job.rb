@@ -11,6 +11,7 @@ class Job < ActiveRecord::Base
 
   def execute
     job_options_hash = {
+      :id => self.id,
       :name => self.name,
       :command => self.command,
       :schedule => self.schedule.name
