@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Job do
 
-  it { should have_many :joblogs }
+  it { should have_many :job_logs }
 
   before :each do
     @job = Job.create(name: "Test job", command: "touch test.txt")

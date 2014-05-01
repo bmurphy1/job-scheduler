@@ -1,7 +1,7 @@
 require 'debugger'
 class Job < ActiveRecord::Base
   belongs_to :schedule
-  has_many :joblogs
+  has_many :job_logs
 
   validates :name, uniqueness: true
   validates :name, :command, presence: true
