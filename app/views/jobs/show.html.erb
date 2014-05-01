@@ -11,3 +11,20 @@
   <%= link_to "Edit", edit_job_path(@job) %>
   <%= button_to "Delete Job", job_path(@job), method: "delete", data: {confirm: "Really delete job?", disable_with: "Deleting..."} %>
 
+<div class="job-logs">
+  <h3>Job History</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Datetime ran</th>
+      <th>Success</th>
+    </tr>
+    <% @job.job_logs.each do |job_log| %>
+    <tr>
+      <td><%= job_log.name %></td>
+      <td><%= job_log.created_at %></td>
+      <td><%= job_log.success %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
