@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Job do
+
+  it { should have_many :joblogs }
+
   before :each do
     @job = Job.create(name: "Test job", command: "touch test.txt")
     @schedule = Schedule.create(name: "Every day at noon", cron_string: "0 12 * * *")
@@ -12,7 +15,7 @@ describe Job do
     @schedule.destroy
   end
 
-  it "Gets scheduled when associated with a schedule" do
+  xit "Gets scheduled when associated with a schedule" do
     @job.update(schedule: @schedule)
     expect(Resque.schedule[@job.name]).to be_true
   end
