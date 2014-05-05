@@ -44,7 +44,7 @@ $ DYNAMIC=true rake resque:scheduler
 ##Ideas/To Do/Icebox
 - Drop down menus for the user to more easily define schedules. Likely use JavaScript to convert entries from these meuns etc to a cron string to be passed to the schedule model.
 - Schedule a job to run at a certain time, but only once.
-- Ability to see history of all times a single job has run
+- Ability to see history of all times a single job has run - Completed
 
 ##License
 Provided as is.
